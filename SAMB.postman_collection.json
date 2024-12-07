@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "900999f8-024f-4a35-9d84-e3084a404473",
+		"name": "SAMB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14320440"
+	},
+	"item": [
+		{
+			"name": "Penerimaan Barang",
+			"item": [
+				{
+					"name": "Get List Penerimaan Barang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/penerimaan-barang"
+					},
+					"response": [
+						{
+							"name": "Result",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/penerimaan-barang"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 15:45:35 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1872"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": true,\n        \"code\": 200,\n        \"message\": \"Berhasil Mengambil Data\",\n        \"content\": [\n            {\n                \"trx_in_pk\": 1,\n                \"trx_in_no\": \"TRXIN001\",\n                \"whs_idf\": 1,\n                \"warehouse_name\": \"Warehouse A\",\n                \"trx_in_date\": \"2024-12-01\",\n                \"trx_in_supp_idf\": 1,\n                \"supplier_name\": \"Supplier A\",\n                \"trx_in_notes\": \"Received items for warehouse A\",\n                \"penerimaan_detail\": [\n                    {\n                        \"trx_in_dpk\": 1,\n                        \"trx_in_idf\": 1,\n                        \"trx_in_d_product_idf\": 1,\n                        \"product_name\": \"Product 1\",\n                        \"trx_in_d_qty_dus\": 10,\n                        \"trx_in_d_qty_pcs\": 100\n                    },\n                    {\n                        \"trx_in_dpk\": 2,\n                        \"trx_in_idf\": 1,\n                        \"trx_in_d_product_idf\": 2,\n                        \"product_name\": \"Product 2\",\n                        \"trx_in_d_qty_dus\": 5,\n                        \"trx_in_d_qty_pcs\": 50\n                    }\n                ]\n            },\n            {\n                \"trx_in_pk\": 2,\n                \"trx_in_no\": \"TRXIN002\",\n                \"whs_idf\": 2,\n                \"warehouse_name\": \"Warehouse B\",\n                \"trx_in_date\": \"2024-12-02\",\n                \"trx_in_supp_idf\": 2,\n                \"supplier_name\": \"Supplier B\",\n                \"trx_in_notes\": \"Received items for warehouse B\",\n                \"penerimaan_detail\": [\n                    {\n                        \"trx_in_dpk\": 3,\n                        \"trx_in_idf\": 2,\n                        \"trx_in_d_product_idf\": 3,\n                        \"product_name\": \"Product 3\",\n                        \"trx_in_d_qty_dus\": 8,\n                        \"trx_in_d_qty_pcs\": 80\n                    },\n                    {\n                        \"trx_in_dpk\": 4,\n                        \"trx_in_idf\": 2,\n                        \"trx_in_d_product_idf\": 4,\n                        \"product_name\": \"Product 4\",\n                        \"trx_in_d_qty_dus\": 12,\n                        \"trx_in_d_qty_pcs\": 120\n                    }\n                ]\n            },\n            {\n                \"trx_in_pk\": 3,\n                \"trx_in_no\": \"TRXIN003\",\n                \"whs_idf\": 3,\n                \"warehouse_name\": \"Warehouse C\",\n                \"trx_in_date\": \"2024-12-03\",\n                \"trx_in_supp_idf\": 3,\n                \"supplier_name\": \"Supplier C\",\n                \"trx_in_notes\": \"Received items for warehouse C\",\n                \"penerimaan_detail\": [\n                    {\n                        \"trx_in_dpk\": 5,\n                        \"trx_in_idf\": 3,\n                        \"trx_in_d_product_idf\": 5,\n                        \"product_name\": \"Product 5\",\n                        \"trx_in_d_qty_dus\": 15,\n                        \"trx_in_d_qty_pcs\": 150\n                    }\n                ]\n            },\n            {\n                \"trx_in_pk\": 4,\n                \"trx_in_no\": \"TRXIN004\",\n                \"whs_idf\": 4,\n                \"warehouse_name\": \"Warehouse D\",\n                \"trx_in_date\": \"2024-12-04\",\n                \"trx_in_supp_idf\": 4,\n                \"supplier_name\": \"Supplier D\",\n                \"trx_in_notes\": \"Received items for warehouse D\",\n                \"penerimaan_detail\": null\n            },\n            {\n                \"trx_in_pk\": 5,\n                \"trx_in_no\": \"TRXIN005\",\n                \"whs_idf\": 5,\n                \"warehouse_name\": \"Warehouse E\",\n                \"trx_in_date\": \"2024-12-05\",\n                \"trx_in_supp_idf\": 5,\n                \"supplier_name\": \"Supplier E\",\n                \"trx_in_notes\": \"Received items for warehouse E\",\n                \"penerimaan_detail\": null\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Insert Penerimaan Barang",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trx_in_no\": \"TRXIN001\",\r\n    \"whs_idf\": 1,\r\n    \"trx_in_date\": \"2024-12-01\",\r\n    \"trx_in_supp_idf\": 1,\r\n    \"trx_in_notes\": \"Received items for warehouse A\",\r\n    \"penerimaan_detail\": [\r\n        {\r\n            \"trx_in_d_product_idf\": 1,\r\n            \"trx_in_d_qty_dus\": 10,\r\n            \"trx_in_d_qty_pcs\": 100\r\n        },\r\n        {\r\n            \"trx_in_d_product_idf\": 2,\r\n            \"trx_in_d_qty_dus\": 5,\r\n            \"trx_in_d_qty_pcs\": 50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/penerimaan-barang"
+					},
+					"response": [
+						{
+							"name": "Validasi 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"trx_in_no\": \"\",\r\n    \"whs_idf\": 1,\r\n    \"trx_in_date\": \"2024-12-01\",\r\n    \"trx_in_supp_idf\": 1,\r\n    \"trx_in_notes\": \"Received items for warehouse A\",\r\n    \"penerimaan_detail\": [\r\n        {\r\n            \"trx_in_d_product_idf\": 1,\r\n            \"trx_in_d_qty_dus\": 10,\r\n            \"trx_in_d_qty_pcs\": 100\r\n        },\r\n        {\r\n            \"trx_in_d_product_idf\": 2,\r\n            \"trx_in_d_qty_dus\": 5,\r\n            \"trx_in_d_qty_pcs\": 50\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/penerimaan-barang"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 16:39:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "92"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": false,\n        \"code\": 400,\n        \"message\": \"TrxInNo tidak boleh kosong\",\n        \"content\": null\n    }\n}"
+						},
+						{
+							"name": "Validasi 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"trx_in_no\": \"TRXIN001\",\r\n    \"whs_idf\": 11,\r\n    \"trx_in_date\": \"2024-12-01\",\r\n    \"trx_in_supp_idf\": 1,\r\n    \"trx_in_notes\": \"Received items for warehouse A\",\r\n    \"penerimaan_detail\": [\r\n        {\r\n            \"trx_in_d_product_idf\": 1,\r\n            \"trx_in_d_qty_dus\": 10,\r\n            \"trx_in_d_qty_pcs\": 100\r\n        },\r\n        {\r\n            \"trx_in_d_product_idf\": 2,\r\n            \"trx_in_d_qty_dus\": 5,\r\n            \"trx_in_d_qty_pcs\": 50\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/penerimaan-barang"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 16:39:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": false,\n        \"code\": 400,\n        \"message\": \"WhsIdf tidak diketahui\",\n        \"content\": null\n    }\n}"
+						},
+						{
+							"name": "Validasi 3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"trx_in_no\": \"TRXIN001\",\r\n    \"whs_idf\": 1,\r\n    \"trx_in_date\": \"2024-12-01\",\r\n    \"trx_in_supp_idf\": 11,\r\n    \"trx_in_notes\": \"Received items for warehouse A\",\r\n    \"penerimaan_detail\": [\r\n        {\r\n            \"trx_in_d_product_idf\": 1,\r\n            \"trx_in_d_qty_dus\": 10,\r\n            \"trx_in_d_qty_pcs\": 100\r\n        },\r\n        {\r\n            \"trx_in_d_product_idf\": 2,\r\n            \"trx_in_d_qty_dus\": 5,\r\n            \"trx_in_d_qty_pcs\": 50\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/penerimaan-barang"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 16:39:54 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": false,\n        \"code\": 400,\n        \"message\": \"TrxInSuppIdf tidak diketahui\",\n        \"content\": null\n    }\n}"
+						},
+						{
+							"name": "Validasi 4",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"trx_in_no\": \"TRXIN001\",\r\n    \"whs_idf\": 1,\r\n    \"trx_in_date\": \"2024-12-01\",\r\n    \"trx_in_supp_idf\": 1,\r\n    \"trx_in_notes\": \"Received items for warehouse A\",\r\n    \"penerimaan_detail\": [\r\n        {\r\n            \"trx_in_d_product_idf\": 11,\r\n            \"trx_in_d_qty_dus\": 10,\r\n            \"trx_in_d_qty_pcs\": 100\r\n        },\r\n        {\r\n            \"trx_in_d_product_idf\": 2,\r\n            \"trx_in_d_qty_dus\": 5,\r\n            \"trx_in_d_qty_pcs\": 50\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/penerimaan-barang"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 16:40:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": false,\n        \"code\": 400,\n        \"message\": \"TrxInDProductIdf tidak diketahui\",\n        \"content\": null\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"trx_in_no\": \"TRXIN001\",\r\n    \"whs_idf\": 1,\r\n    \"trx_in_date\": \"2024-12-01\",\r\n    \"trx_in_supp_idf\": 1,\r\n    \"trx_in_notes\": \"Received items for warehouse A\",\r\n    \"penerimaan_detail\": [\r\n        {\r\n            \"trx_in_d_product_idf\": 1,\r\n            \"trx_in_d_qty_dus\": 10,\r\n            \"trx_in_d_qty_pcs\": 100\r\n        },\r\n        {\r\n            \"trx_in_d_product_idf\": 2,\r\n            \"trx_in_d_qty_dus\": 5,\r\n            \"trx_in_d_qty_pcs\": 50\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/penerimaan-barang"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 16:40:40 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": true,\n        \"code\": 200,\n        \"message\": \"Berhasil Menambahkan Data\",\n        \"content\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pengeluaran Barang",
+			"item": [
+				{
+					"name": "GetList Pengeluaran Barang",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/pengeluaran-barang"
+					},
+					"response": [
+						{
+							"name": "Result",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/pengeluaran-barang"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 15:47:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1915"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": true,\n        \"code\": 200,\n        \"message\": \"Berhasil Mengambil Data\",\n        \"content\": [\n            {\n                \"trx_out_pk\": 1,\n                \"trx_out_no\": \"TRXOUT001\",\n                \"whs_idf\": 1,\n                \"warehouse_name\": \"Warehouse A\",\n                \"trx_out_date\": \"2024-12-01\",\n                \"trx_out_supp_idf\": 1,\n                \"supplier_name\": \"Supplier A\",\n                \"trx_out_notes\": \"Sent items from warehouse A\",\n                \"pengeluaran_detail\": [\n                    {\n                        \"trx_out_dpk\": 1,\n                        \"trx_out_idf\": 1,\n                        \"trx_out_d_product_idf\": 1,\n                        \"product_name\": \"Product 1\",\n                        \"trx_out_d_qty_dus\": 5,\n                        \"trx_out_d_qty_pcs\": 50\n                    },\n                    {\n                        \"trx_out_dpk\": 2,\n                        \"trx_out_idf\": 1,\n                        \"trx_out_d_product_idf\": 2,\n                        \"product_name\": \"Product 2\",\n                        \"trx_out_d_qty_dus\": 3,\n                        \"trx_out_d_qty_pcs\": 30\n                    }\n                ]\n            },\n            {\n                \"trx_out_pk\": 2,\n                \"trx_out_no\": \"TRXOUT002\",\n                \"whs_idf\": 2,\n                \"warehouse_name\": \"Warehouse B\",\n                \"trx_out_date\": \"2024-12-02\",\n                \"trx_out_supp_idf\": 2,\n                \"supplier_name\": \"Supplier B\",\n                \"trx_out_notes\": \"Sent items from warehouse B\",\n                \"pengeluaran_detail\": [\n                    {\n                        \"trx_out_dpk\": 3,\n                        \"trx_out_idf\": 2,\n                        \"trx_out_d_product_idf\": 3,\n                        \"product_name\": \"Product 3\",\n                        \"trx_out_d_qty_dus\": 7,\n                        \"trx_out_d_qty_pcs\": 70\n                    },\n                    {\n                        \"trx_out_dpk\": 4,\n                        \"trx_out_idf\": 2,\n                        \"trx_out_d_product_idf\": 4,\n                        \"product_name\": \"Product 4\",\n                        \"trx_out_d_qty_dus\": 10,\n                        \"trx_out_d_qty_pcs\": 100\n                    }\n                ]\n            },\n            {\n                \"trx_out_pk\": 3,\n                \"trx_out_no\": \"TRXOUT003\",\n                \"whs_idf\": 3,\n                \"warehouse_name\": \"Warehouse C\",\n                \"trx_out_date\": \"2024-12-03\",\n                \"trx_out_supp_idf\": 3,\n                \"supplier_name\": \"Supplier C\",\n                \"trx_out_notes\": \"Sent items from warehouse C\",\n                \"pengeluaran_detail\": [\n                    {\n                        \"trx_out_dpk\": 5,\n                        \"trx_out_idf\": 3,\n                        \"trx_out_d_product_idf\": 5,\n                        \"product_name\": \"Product 5\",\n                        \"trx_out_d_qty_dus\": 12,\n                        \"trx_out_d_qty_pcs\": 120\n                    }\n                ]\n            },\n            {\n                \"trx_out_pk\": 4,\n                \"trx_out_no\": \"TRXOUT004\",\n                \"whs_idf\": 4,\n                \"warehouse_name\": \"Warehouse D\",\n                \"trx_out_date\": \"2024-12-04\",\n                \"trx_out_supp_idf\": 4,\n                \"supplier_name\": \"Supplier D\",\n                \"trx_out_notes\": \"Sent items from warehouse D\",\n                \"pengeluaran_detail\": null\n            },\n            {\n                \"trx_out_pk\": 5,\n                \"trx_out_no\": \"TRXOUT005\",\n                \"whs_idf\": 5,\n                \"warehouse_name\": \"Warehouse E\",\n                \"trx_out_date\": \"2024-12-05\",\n                \"trx_out_supp_idf\": 5,\n                \"supplier_name\": \"Supplier E\",\n                \"trx_out_notes\": \"Sent items from warehouse E\",\n                \"pengeluaran_detail\": null\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Insert Pengeluaran Barang",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trx_out_no\": \"TRXOUT001\",\r\n    \"whs_idf\": 1,\r\n    \"trx_out_date\": \"2024-12-01\",\r\n    \"trx_out_supp_idf\": 1,\r\n    \"trx_out_notes\": \"Sent items from warehouse A\",\r\n    \"pengeluaran_detail\": [\r\n        {\r\n            \"trx_out_d_product_idf\": 1,\r\n            \"trx_out_d_qty_dus\": 5,\r\n            \"trx_out_d_qty_pcs\": 50\r\n        },\r\n        {\r\n            \"trx_out_d_product_idf\": 2,\r\n            \"trx_out_d_qty_dus\": 3,\r\n            \"trx_out_d_qty_pcs\": 30\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/pengeluaran-barang"
+					},
+					"response": [
+						{
+							"name": "Validasi 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"trx_out_no\": \"\",\r\n    \"whs_idf\": 1,\r\n    \"trx_out_date\": \"2024-12-01\",\r\n    \"trx_out_supp_idf\": 1,\r\n    \"trx_out_notes\": \"Sent items from warehouse A\",\r\n    \"pengeluaran_detail\": [\r\n        {\r\n            \"trx_out_d_product_idf\": 1,\r\n            \"trx_out_d_qty_dus\": 5,\r\n            \"trx_out_d_qty_pcs\": 50\r\n        },\r\n        {\r\n            \"trx_out_d_product_idf\": 2,\r\n            \"trx_out_d_qty_dus\": 3,\r\n            \"trx_out_d_qty_pcs\": 30\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pengeluaran-barang"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 15:52:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "93"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": false,\n        \"code\": 400,\n        \"message\": \"TrxOutNo tidak boleh kosong\",\n        \"content\": null\n    }\n}"
+						},
+						{
+							"name": "Validasi 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"trx_out_no\": \"TRXOUT001\",\r\n    \"whs_idf\": 11,\r\n    \"trx_out_date\": \"2024-12-01\",\r\n    \"trx_out_supp_idf\": 1,\r\n    \"trx_out_notes\": \"Sent items from warehouse A\",\r\n    \"pengeluaran_detail\": [\r\n        {\r\n            \"trx_out_d_product_idf\": 1,\r\n            \"trx_out_d_qty_dus\": 5,\r\n            \"trx_out_d_qty_pcs\": 50\r\n        },\r\n        {\r\n            \"trx_out_d_product_idf\": 2,\r\n            \"trx_out_d_qty_dus\": 3,\r\n            \"trx_out_d_qty_pcs\": 30\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pengeluaran-barang"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 15:53:00 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": false,\n        \"code\": 400,\n        \"message\": \"WhsIdf tidak diketahui\",\n        \"content\": null\n    }\n}"
+						},
+						{
+							"name": "Validasi 3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"trx_out_no\": \"TRXOUT001\",\r\n    \"whs_idf\": 1,\r\n    \"trx_out_date\": \"2024-12-01\",\r\n    \"trx_out_supp_idf\": 11,\r\n    \"trx_out_notes\": \"Sent items from warehouse A\",\r\n    \"pengeluaran_detail\": [\r\n        {\r\n            \"trx_out_d_product_idf\": 1,\r\n            \"trx_out_d_qty_dus\": 5,\r\n            \"trx_out_d_qty_pcs\": 50\r\n        },\r\n        {\r\n            \"trx_out_d_product_idf\": 2,\r\n            \"trx_out_d_qty_dus\": 3,\r\n            \"trx_out_d_qty_pcs\": 30\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pengeluaran-barang"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 15:53:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": false,\n        \"code\": 400,\n        \"message\": \"TrxOutSuppIdf tidak diketahui\",\n        \"content\": null\n    }\n}"
+						},
+						{
+							"name": "Validasi 4",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"trx_out_no\": \"TRXOUT001\",\r\n    \"whs_idf\": 1,\r\n    \"trx_out_date\": \"2024-12-01\",\r\n    \"trx_out_supp_idf\": 1,\r\n    \"trx_out_notes\": \"Sent items from warehouse A\",\r\n    \"pengeluaran_detail\": [\r\n        {\r\n            \"trx_out_d_product_idf\": 11,\r\n            \"trx_out_d_qty_dus\": 5,\r\n            \"trx_out_d_qty_pcs\": 50\r\n        },\r\n        {\r\n            \"trx_out_d_product_idf\": 2,\r\n            \"trx_out_d_qty_dus\": 3,\r\n            \"trx_out_d_qty_pcs\": 30\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pengeluaran-barang"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 15:53:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": false,\n        \"code\": 400,\n        \"message\": \"TrxOutDProductIdf tidak diketahui\",\n        \"content\": null\n    }\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"trx_out_no\": \"TRXOUT001\",\r\n    \"whs_idf\": 1,\r\n    \"trx_out_date\": \"2024-12-01\",\r\n    \"trx_out_supp_idf\": 1,\r\n    \"trx_out_notes\": \"Sent items from warehouse A\",\r\n    \"pengeluaran_detail\": [\r\n        {\r\n            \"trx_out_d_product_idf\": 1,\r\n            \"trx_out_d_qty_dus\": 5,\r\n            \"trx_out_d_qty_pcs\": 50\r\n        },\r\n        {\r\n            \"trx_out_d_product_idf\": 2,\r\n            \"trx_out_d_qty_dus\": 3,\r\n            \"trx_out_d_qty_pcs\": 30\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/pengeluaran-barang"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Dec 2024 15:54:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"samb\": {\n        \"success\": true,\n        \"code\": 200,\n        \"message\": \"Berhasil Menambahkan Data\",\n        \"content\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
